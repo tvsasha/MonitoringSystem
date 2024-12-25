@@ -25,12 +25,13 @@ namespace MonitoringSystem2
     public partial class CalibratorsWindows : Window
     {
         MonitoringSystemDBEntities db;
-
-        public CalibratorsWindows()
+        public int EmployeeID;
+        public CalibratorsWindows(int employeeID)
         {
             InitializeComponent();
             db = new MonitoringSystemDBEntities();
             LoadData();
+            EmployeeID = employeeID;
         }
 
         private void LoadData()
@@ -43,7 +44,8 @@ namespace MonitoringSystem2
                                          CalibrationID = calibration.CalibrationID,
                                          CalibrationDate = calibration.CalibrationDate,
                                          Calibrator = employee.FullName,
-                                         CalibrationType = calibrationType.CalibrationName
+                                         CalibrationType = calibrationType.CalibrationName,
+                                         Description = calibration.Description
                                      };
 
             CalibrationResultsDataGrid.ItemsSource = calibrationResults.ToList();
@@ -140,12 +142,13 @@ namespace MonitoringSystem2
 
                 // Сохраняем документ
                 document.Save(filePath);
-                MessageBox.Show("PDF exported successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("PDF успешно экспортирован!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error exporting PDF: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Ошибка при экспорте PDF: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
         }
 
         private void ExportToPdf_Click(object sender, RoutedEventArgs e)
@@ -171,7 +174,7 @@ namespace MonitoringSystem2
 
         private void StartButton(object sender, RoutedEventArgs e)
         {
-            CalibratorWindow window = new CalibratorWindow();
+            CalibratorWindow window = new CalibratorWindow(EmployeeID);
             window.Show();
             this.Close();
         }

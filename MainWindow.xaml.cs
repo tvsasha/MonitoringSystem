@@ -40,7 +40,7 @@ namespace MonitoringSystem2
             }
             else
             {
-                MessageBox.Show("Invalid login or password.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Неверный логин или пароль.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -50,22 +50,24 @@ namespace MonitoringSystem2
 
             switch (roleId)
             {
-                case 1: // Tester
+                case 1: // Тестер
                     window = new TestsWindow(employeeID);
                     break;
-                case 2: // Calibrator
-                    window = new CalibratorsWindows();
+                case 2: // Калибровщик
+                    window = new CalibratorsWindows(employeeID);
                     break;
-                case 3: // Admin
+                case 3: // Администратор
                     window = new AdminWindow();
                     break;
-                case 4: // Guest
+                case 4: // Гость
                     window = new GuestWindow();
                     break;
                 default:
-                    MessageBox.Show("Role not recognized.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Роль не распознана.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
             }
+        
+
 
             this.Close();
             window.ShowDialog();

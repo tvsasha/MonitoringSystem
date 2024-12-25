@@ -5,15 +5,81 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MonitoringSystem2"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="450" Width="800">
+        Title="Окно администратора" Height="650" Width="800">
     <Grid>
-        <TextBlock Text="Admin Panel" FontSize="20" Margin="10" HorizontalAlignment="Center"/>
+        <TabControl>
+            <!-- Вкладка для пользователей -->
+            <TabItem Header="Пользователи">
+                <Grid>
+                    <StackPanel Orientation="Vertical" Margin="10">
+                        <TextBlock Text="Управление пользователями" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <DataGrid x:Name="UsersDataGrid" AutoGenerateColumns="False" Height="300">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ID" Binding="{Binding EmployeeID}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Полное имя" Binding="{Binding FullName}"/>
+                                <DataGridTextColumn Header="Роль" Binding="{Binding RoleID}"/>
+                                <DataGridTextColumn Header="Логин" Binding="{Binding Login}"/>
+                                <DataGridTextColumn Header="Пароль" Binding="{Binding PasswordHash}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
 
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0">
-            <Button Content="Manage Sensors" Width="200" Height="30" Click="ManageSensors_Click"/>
-            <Button Content="Manage Tests" Width="200" Height="30" Margin="0,10,0,0" Click="ManageTests_Click"/>
-            <Button Content="Manage Calibrations" Width="200" Height="30" Margin="0,10,0,0" Click="ManageCalibrations_Click"/>
-            <Button Content="Manage Reference Values" Width="200" Height="30" Margin="0,10,0,0" Click="ManageReferenceValues_Click"/>
-        </StackPanel>
+                        <Button Content="Добавить пользователя" Width="150" Margin="0,10,0,0" Click="AddUser_Click"/>
+                        <Button Content="Редактировать пользователя" Width="150" Margin="0,10,0,0" Click="EditUser_Click"/>
+                        <Button Content="Удалить пользователя" Width="150" Margin="0,10,0,0" Click="DeleteUser_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!-- Вкладка для оборудования -->
+            <TabItem Header="Оборудование">
+                <Grid>
+                    <StackPanel Orientation="Vertical" Margin="10">
+                        <TextBlock Text="Управление оборудованием" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <DataGrid x:Name="EquipmentDataGrid" AutoGenerateColumns="True" Height="300"/>
+                        <Button Content="Добавить оборудование" Width="150" Margin="0,10,0,0" Click="AddEquipment_Click"/>
+                        <Button Content="Редактировать оборудование" Width="150" Margin="0,10,0,0" Click="EditEquipment_Click"/>
+                        <Button Content="Удалить оборудование" Width="150" Margin="0,10,0,0" Click="DeleteEquipment_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!-- Вкладка для датчиков -->
+            <TabItem Header="Датчики">
+                <Grid>
+                    <StackPanel Orientation="Vertical" Margin="10">
+                        <TextBlock Text="Управление датчиками" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <DataGrid x:Name="SensorsDataGrid" AutoGenerateColumns="True" Height="300"/>
+                        <Button Content="Добавить датчик" Width="150" Margin="0,10,0,0" Click="AddSensor_Click"/>
+                        <Button Content="Редактировать датчик" Width="150" Margin="0,10,0,0" Click="EditSensor_Click"/>
+                        <Button Content="Удалить датчик" Width="150" Margin="0,10,0,0" Click="DeleteSensor_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!-- Вкладка для тестов -->
+            <TabItem Header="Тесты">
+                <Grid>
+                    <StackPanel Orientation="Vertical" Margin="10">
+                        <TextBlock Text="Управление тестами" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <DataGrid x:Name="TestsDataGrid" AutoGenerateColumns="True" Height="300"/>
+                        <Button Content="Добавить тест" Width="150" Margin="0,10,0,0" Click="AddTest_Click"/>
+                        <Button Content="Редактировать тест" Width="150" Margin="0,10,0,0" Click="EditTest_Click"/>
+                        <Button Content="Удалить тест" Width="150" Margin="0,10,0,0" Click="DeleteTest_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!-- Вкладка для эталонных значений -->
+            <TabItem Header="Эталонные значения">
+                <Grid>
+                    <StackPanel Orientation="Vertical" Margin="10">
+                        <TextBlock Text="Управление эталонными значениями" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <DataGrid x:Name="ReferenceValuesDataGrid" AutoGenerateColumns="True" Height="300"/>
+                        <Button Content="Редактировать эталонное значение" Width="200" Margin="0,10,0,0" Click="EditReferenceValue_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button Content="Выйти" Click="QuitButton" VerticalAlignment="Top" Margin="314,573,314,0" Height="30" />
     </Grid>
 </Window>
