@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e16228bc8fbc4a3692da059109b9fdcb" Name="Diagram1">
+        <EntityTypeShape EntityType="MonitoringSystem9Model.Calibration" Width="1.5" PointX="7.5" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringSystem9Model.CalibrationType" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringSystem9Model.DeviceType" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringSystem9Model.Employee" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringSystem9Model.Equipment" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringSystem9Model.ReferenceValue" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringSystem9Model.Role" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringSystem9Model.Sensor" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringSystem9Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringSystem9Model.Test" Width="1.5" PointX="7.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringSystem9Model.TestResult" Width="1.5" PointX="9.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringSystem9Model.TestType" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <AssociationConnector Association="MonitoringSystem9Model.FK__Calibrati__Calib__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringSystem9Model.FK__Calibrati__Emplo__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringSystem9Model.FK__Reference__Calib__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringSystem9Model.FK__Equipment__Devic__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringSystem9Model.FK__Reference__Devic__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringSystem9Model.FK__Sensor__DeviceTy__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringSystem9Model.FK__Employee__RoleID__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringSystem9Model.FK__Test__EmployeeID__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringSystem9Model.FK__Sensor__Equipmen__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringSystem9Model.FK__Test__SensorID__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringSystem9Model.FK__Test__TestTypeID__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringSystem9Model.FK__TestResul__TestI__3E52440B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
