@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="400">
     <Grid>
-        <TextBlock Text="Login:" VerticalAlignment="Top" Margin="30,50,0,0" HorizontalAlignment="Left"/>
+        <TextBlock Text="Логин:" VerticalAlignment="Top" Margin="30,50,0,0" HorizontalAlignment="Left"/>
         <TextBox x:Name="LoginTextBox" Width="200" Height="25" VerticalAlignment="Top" Margin="100,50,0,0" HorizontalAlignment="Left"/>
 
-        <TextBlock Text="Password:" VerticalAlignment="Top" Margin="30,100,0,0" HorizontalAlignment="Left"/>
+        <TextBlock Text="Пароль:" VerticalAlignment="Top" Margin="30,100,0,0" HorizontalAlignment="Left"/>
         <TextBox x:Name="PasswordTextBox" Width="200" Height="25" VerticalAlignment="Top" Margin="100,100,0,0" HorizontalAlignment="Left"/>
 
-        <Button Content="Login" Width="100" Height="30" VerticalAlignment="Top" Margin="150,150,0,0" HorizontalAlignment="Left" Click="LoginButton_Click"/>
+        <Button Content="Войти" Width="100" Height="30" VerticalAlignment="Top" Margin="150,150,0,0" HorizontalAlignment="Left" Click="LoginButton_Click"/>
     </Grid>
 </Window>

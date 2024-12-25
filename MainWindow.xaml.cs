@@ -54,7 +54,7 @@ namespace MonitoringSystem2
                     window = new TestsWindow(employeeID);
                     break;
                 case 2: // Calibrator
-                    window = new CalibratorWindow();
+                    window = new CalibratorsWindows();
                     break;
                 case 3: // Admin
                     window = new AdminWindow();
